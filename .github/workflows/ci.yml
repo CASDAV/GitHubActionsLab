@@ -15,7 +15,7 @@ jobs:
         with:
           dotnet-version: '9.0'
       - name: Move to app directory
-        run: cd GitHubAcctionsLab/
+        run: cd GitHubActionsLab/
       - name: Restore dependencies
         run: dotnet restore
       - name: Build the application
