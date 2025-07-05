@@ -1,23 +1,24 @@
 name: .NET CI Pipeline
 on:
   push:
-	branches:
-	  - main
+    branches:
+      - main
+
 jobs:
   build:
-	runs-on: ubuntu-latest
-	steps:
-	  - name: Checkout code
-		uses: actions/checkout@v3
-	  - name: Setup .NET SDK
-		uses: actions/setup-dotnet@v3
-		with:
-		  dotnet-version: '9.0'
-	  - name: move to app directory
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0'
+      - name: Move to app directory
         run: cd GitHubAcctionsLab/
-	  - name: Restore dependencies
-		run: dotnet restore
-	  - name: Build the application
-		run: dotnet build --configuration Release --no-restore
-	  - name: Run tests
-		run: dotnet test --no-restore --verbosity normal
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build the application
+        run: dotnet build --configuration Release --no-restore
+      - name: Run tests
+        run: dotnet test --no-restore --verbosity normal
