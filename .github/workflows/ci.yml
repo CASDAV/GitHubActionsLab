@@ -14,8 +14,8 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '9.0'
-      - name: Move to app directory
-        run: cd GitHubActionsLab/
+      # - name: Move to app directory
+      #   run: cd GitHubActionsLab/
       - name: Restore dependencies
         run: dotnet restore
       - name: Build the application
